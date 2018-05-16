@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
   </head>
   <body>
 
@@ -11,27 +10,25 @@
   </body>
   <script type="text/javascript">
 
-  //Grabbing an element to create and before and after elements in releveance to.
-  var h1 = document.querySelector('h1');
+(function() {
 
-  //Creating a div element to present a layout
-  var div = document.createElement('div');
-  var p = document.createElement('p');
+    //Grabbing an element to create and before and after elements in releveance to.
+    var h1 = document.querySelector('h1');
 
-  //Add content to p
-  div.innerText = "I tried to find the rhythm of the world where I used to live. I followed the current. I was silent, attentive, I made a conscious effort to smile, nod, stand, and perform millions of gestures that constitue life on earth."
+    //Function to create elements to the document
+    function DomElement(element, elementID, elementClass){
+        var x = document.createElement(element);
+        h1.after(x);
+        x.setAttribute('id', elementID);
+        x.setAttribute('class', elementClass);
+        x.setAttribute('style', 'margin-left: 4.5em; width: 30em; font-size: 2em; text-align: center; border: 1px solid #44E8FF; border-radius: 0.5em');
+        x.textContent = "I tried to find the rhythm of the world where I used to live. I followed the current. I was silent, attentive, I made a conscious effort to smile, nod, stand, and perform millions of gestures that constitue life on earth.";
+        console.log(x);
+        console.dir(x);
+    }
+    DomElement('div', 'contain', 'layout');
 
-
-  //Insert new elements after/before chosen element
-  h1.after(div);
-
-  //Attributes for div
-  div.setAttribute('id','contain');
-  div.setAttribute('class', 'divCont');
-  div.setAttribute('style', 'width: 30em; text-align: center; border: 1px solid blue; border-radius: 0.5em');
-
-
-
+}());
 
   </script>
 </html>
